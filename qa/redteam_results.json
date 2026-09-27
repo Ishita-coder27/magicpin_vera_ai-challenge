@@ -1,0 +1,1032 @@
+{
+ "results": [
+  {
+   "area": "api",
+   "check": "healthz 200",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "api",
+   "check": "context 400 on empty body",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on missing scope",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on missing context_id",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on missing version",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on missing payload",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on version as word",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on payload as list",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on unknown scope",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on empty context_id",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context 400 on malformed JSON",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "context accepts extra/forward-compatible fields",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "api",
+   "check": "context tolerates unknown top-level field",
+   "ok": true,
+   "evidence": "200"
+  },
+  {
+   "area": "api",
+   "check": "context rejects >500KB payload with 400",
+   "ok": true,
+   "evidence": "400"
+  },
+  {
+   "area": "api",
+   "check": "tick safe on empty",
+   "ok": true,
+   "evidence": "(200, '{\"actions\":[]}')"
+  },
+  {
+   "area": "api",
+   "check": "tick safe on triggers as string",
+   "ok": true,
+   "evidence": "(400, '{\"actions\":[],\"error\":\"invalid_request\"}')"
+  },
+  {
+   "area": "api",
+   "check": "tick safe on now garbage",
+   "ok": true,
+   "evidence": "(200, '{\"actions\":[]}')"
+  },
+  {
+   "area": "api",
+   "check": "reply safe on empty",
+   "ok": true,
+   "evidence": "(400, '{\"action\":\"wait\",\"wait_seconds\":1800,\"rationale\":\"malformed reply payload\"}')"
+  },
+  {
+   "area": "api",
+   "check": "reply safe on no conversation_id",
+   "ok": true,
+   "evidence": "(400, '{\"action\":\"wait\",\"wait_seconds\":1800,\"rationale\":\"malformed reply payload\"}')"
+  },
+  {
+   "area": "api",
+   "check": "reply safe on turn as word",
+   "ok": true,
+   "evidence": "(400, '{\"action\":\"wait\",\"wait_seconds\":1800,\"rationale\":\"malformed reply payload\"}')"
+  },
+  {
+   "area": "api",
+   "check": "reply safe on message null",
+   "ok": true,
+   "evidence": "(400, '{\"action\":\"wait\",\"wait_seconds\":1800,\"rationale\":\"malformed reply payload\"}')"
+  },
+  {
+   "area": "api",
+   "check": "reply for unknown merchant is valid",
+   "ok": true,
+   "evidence": "{'action': 'send', 'body': 'Hi! What would you like help with — your Google profile, an offer, or customer messages?', 'cta': 'open_ended', 'rationale': 'Greeting with no open thread: short menu of what Vera can do'}"
+  },
+  {
+   "area": "api",
+   "check": "teardown ok",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "api",
+   "check": "unknown route 404 (no stack trace)",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "versioning",
+   "check": "merchant: 1,1,0,2,2,3,1 -> 200,409,409,200,409,200,409",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "category: 1,1,0,2,2,3,1 -> 200,409,409,200,409,200,409",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "customer: 1,1,0,2,2,3,1 -> 200,409,409,200,409,200,409",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "trigger: 1,1,0,2,2,3,1 -> 200,409,409,200,409,200,409",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "replayed v1 rejected with 409",
+   "ok": true,
+   "evidence": "409"
+  },
+  {
+   "area": "versioning",
+   "check": "tick reflects merchant v2 after update",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 50% week-on-week — about 6 vs a baseline of 12. Your Google listing is still unverified. Want me to start v"
+  },
+  {
+   "area": "versioning",
+   "check": "replayed v1 does not revert output",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 50% week-on-week — about 6 vs a baseline of 12. Your Google listing is still unverified. Want me to start v"
+  },
+  {
+   "area": "context-delta",
+   "check": "CTR 2.1%->3.2%: stop calling CTR below peer",
+   "ok": true,
+   "evidence": "Dr. Meera, your listing numbers flattened this week. 'wait time' has come up in 3 reviews in 30 days (\"had to wait 30 min on Sunday afternoon\") — that's what searchers read first.\n\nHere's a ready draf"
+  },
+  {
+   "area": "context-delta",
+   "check": "expired offer not quoted as 'your' live offer",
+   "ok": true,
+   "evidence": "Dr. Meera, a new clinic — Smile Studio — opened 1.3 km from you on 8 Apr, leading with Dental Cleaning @ ₹199. I wouldn't match that price. Your reviews keep praising the way you explain things (\"Dr. Meera explains every"
+  },
+  {
+   "area": "context-delta",
+   "check": "paused offer not quoted as live",
+   "ok": true,
+   "evidence": "Dr. Meera, a new clinic — Smile Studio — opened 1.3 km from you on 8 Apr, leading with Dental Cleaning @ ₹199. I wouldn't match that price. Your reviews keep praising the way you explain things (\"Dr. Meera explains every"
+  },
+  {
+   "area": "context-delta",
+   "check": "updated digest numbers flow through (41%, 3,000)",
+   "ok": true,
+   "evidence": "Dr. Meera, the new JIDA Oct 2026 just landed — one result worth 2 minutes of your time. 3-month fluoride varnish recall outperforms 6-month for high-risk adult caries (p.14). Updated: 41% lower caries recurrence in 3,000"
+  },
+  {
+   "area": "context-delta",
+   "check": "customer consent revoked -> no customer send",
+   "ok": true,
+   "evidence": "Karthik, Rashmi's win-back message is due, but I haven't sent it — customer has not opted in to merchant outreach. Rashm"
+  },
+  {
+   "area": "determinism",
+   "check": "30 pairs x10 identical compose() output",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "determinism",
+   "check": "tick x3 fresh engines identical actions",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "determinism",
+   "check": "reply sequence x3 identical",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "coverage",
+   "check": "all 100 triggers compose, validate and are grounded",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "coverage",
+   "check": "all 200 customers x customer triggers valid",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "coverage",
+   "check": "coverage by category",
+   "ok": true,
+   "evidence": "{'gyms': 24, 'dentists': 17, 'restaurants': 15, 'pharmacies': 22, 'salons': 22}"
+  },
+  {
+   "area": "coverage",
+   "check": "coverage by trigger kind",
+   "ok": true,
+   "evidence": "{'curious_ask_due': 6, 'festival_upcoming': 6, 'customer_lapsed_hard': 1, 'competitor_opened': 6, 'cde_opportunity': 1, 'appointment_tomorrow': 5, 'customer_lapsed_soft': 5, 'research_digest': 6, 'recall_due': 6, 'chronic_refill_due': 6, 'dormant_with_vera': 6, 'perf_dip': 6, 'perf_spike': 6, 'renewal_due': 6, 'trial_followup': 6, 'active_planning_intent': 2, 'milestone_reached': 6, 'review_theme_"
+  },
+  {
+   "area": "no-cheating",
+   "check": "no merchant/trigger/test ids or dataset names in engine code",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "no-cheating",
+   "check": "no verbatim case-study sentences in submission",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "adversarial",
+   "check": "160 synthetic merchant scenarios: grounded, valid, no crash, no dead offers",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "ranking",
+   "check": "compliance vs promotion (order A): one send, picks trg_002_compliance_dci_radiograph",
+   "ok": true,
+   "evidence": "['trg_002_compliance_dci_radiograph']"
+  },
+  {
+   "area": "ranking",
+   "check": "compliance vs promotion (order B): one send, picks trg_002_compliance_dci_radiograph",
+   "ok": true,
+   "evidence": "['trg_002_compliance_dci_radiograph']"
+  },
+  {
+   "area": "ranking",
+   "check": "compliance vs research (order A): one send, picks trg_002_compliance_dci_radiograph",
+   "ok": true,
+   "evidence": "['trg_002_compliance_dci_radiograph']"
+  },
+  {
+   "area": "ranking",
+   "check": "compliance vs research (order B): one send, picks trg_002_compliance_dci_radiograph",
+   "ok": true,
+   "evidence": "['trg_002_compliance_dci_radiograph']"
+  },
+  {
+   "area": "ranking",
+   "check": "supply alert vs seasonal (order A): one send, picks trg_018_supply_atorvastatin_recall",
+   "ok": true,
+   "evidence": "['trg_018_supply_atorvastatin_recall']"
+  },
+  {
+   "area": "ranking",
+   "check": "supply alert vs seasonal (order B): one send, picks trg_018_supply_atorvastatin_recall",
+   "ok": true,
+   "evidence": "['trg_018_supply_atorvastatin_recall']"
+  },
+  {
+   "area": "ranking",
+   "check": "planning intent vs milestone (order A): one send, picks trg_013_corporate_thali_planning",
+   "ok": true,
+   "evidence": "['trg_013_corporate_thali_planning']"
+  },
+  {
+   "area": "ranking",
+   "check": "planning intent vs milestone (order B): one send, picks trg_013_corporate_thali_planning",
+   "ok": true,
+   "evidence": "['trg_013_corporate_thali_planning']"
+  },
+  {
+   "area": "ranking",
+   "check": "dip vs renewal (order A): one send",
+   "ok": true,
+   "evidence": "['trg_004_perf_dip_bharat']"
+  },
+  {
+   "area": "ranking",
+   "check": "dip vs renewal (order B): one send",
+   "ok": true,
+   "evidence": "['trg_004_perf_dip_bharat']"
+  },
+  {
+   "area": "ranking",
+   "check": "review theme vs ipl (order A): one send",
+   "ok": true,
+   "evidence": "['trg_010_ipl_match_delhi']"
+  },
+  {
+   "area": "ranking",
+   "check": "review theme vs ipl (order B): one send",
+   "ok": true,
+   "evidence": "['trg_010_ipl_match_delhi']"
+  },
+  {
+   "area": "ranking",
+   "check": "spike vs planning (order A): one send, picks trg_016_kids_yoga_program_drafting",
+   "ok": true,
+   "evidence": "['trg_016_kids_yoga_program_drafting']"
+  },
+  {
+   "area": "ranking",
+   "check": "spike vs planning (order B): one send, picks trg_016_kids_yoga_program_drafting",
+   "ok": true,
+   "evidence": "['trg_016_kids_yoga_program_drafting']"
+  },
+  {
+   "area": "ranking",
+   "check": "winback vs dormancy (order A): one send",
+   "ok": true,
+   "evidence": "['trg_009_winback_glamour']"
+  },
+  {
+   "area": "ranking",
+   "check": "winback vs dormancy (order B): one send",
+   "ok": true,
+   "evidence": "['trg_009_winback_glamour']"
+  },
+  {
+   "area": "ranking",
+   "check": "engaged live thread blocks low-urgency proactive nudge",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "ranking",
+   "check": "weekend IPL: no dine-in promo",
+   "ok": true,
+   "evidence": "suresh, dc vs mi is on tonight (7:30pm, arun jaitley stadium) — but it's a sunday game. weekend ipl nights pull people h"
+  },
+  {
+   "area": "ranking",
+   "check": "competitor: no price match",
+   "ok": true,
+   "evidence": "dr. meera, a new clinic — smile studio — opened 1.3 km from you on 8 apr, leading with dental cleaning @ ₹199. that's ₹1"
+  },
+  {
+   "area": "ranking",
+   "check": "seasonal dip: hold ad spend / retention",
+   "ok": true,
+   "evidence": "karthik, views are down 30% this week — and that's the calendar, not your listing. apr-jun is the slowest acquisition st"
+  },
+  {
+   "area": "ranking",
+   "check": "festival 188d out: no promo now",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "ranking",
+   "check": "placeholder dip with recovered metrics: no 'fell X%' claim",
+   "ok": true,
+   "evidence": "dr. bharat, patient calls are the soft spot at bharat dental care: 4 in 30 days vs about 12 for similar clinics in metros — even with views +30% and calls +40% "
+  },
+  {
+   "area": "ranking",
+   "check": "festival in the past: no 'upcoming' framing",
+   "ok": true,
+   "evidence": "Lakshmi, Holi has already gone by (14 Mar), so there's nothing to push for it now. Want me to note it for next year's plan instead?"
+  },
+  {
+   "area": "hallucination",
+   "check": "injected claims in merchant name not asserted as facts",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews this month praise your stylists — one says \"Priya is the best for balayage\" and 'balayage near me' sear"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake price rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake location rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake stat rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake citation rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake social proof rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with fake slot rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with url rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with two asks rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with taboo rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "hallucination",
+   "check": "LLM output with empty rejected -> deterministic fallback",
+   "ok": true,
+   "evidence": "Lakshmi, quick question for this week: is balayage your most-asked service right now? 12 reviews thi"
+  },
+  {
+   "area": "derived-numbers",
+   "check": "perf dip -0.5 of 12 -> 'about 6 vs a baseline of 12'",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 50% week-on-week — about 6 vs a baseline of 12. There's no live offer on your listing r"
+  },
+  {
+   "area": "derived-numbers",
+   "check": "perf dip -0.25 of 40 -> 'about 30 vs a baseline of 40'",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 25% week-on-week — about 30 vs a baseline of 40. There's no live offer on your listing "
+  },
+  {
+   "area": "derived-numbers",
+   "check": "perf dip -1.0 of 10 -> 'about 0 vs a baseline of 10'",
+   "ok": true,
+   "evidence": "Dr. Bharat, views to Bharat Dental Care fell 100% week-on-week — about 0 vs a baseline of 10. There's no live offer on your listing right no"
+  },
+  {
+   "area": "derived-numbers",
+   "check": "zero metrics: no divide-by-zero, no crash",
+   "ok": true,
+   "evidence": "Dr. Bharat, Bharat Dental Care has served 220 customers this year — a real base to build on. The che"
+  },
+  {
+   "area": "derived-numbers",
+   "check": "null / garbage metrics: no crash, no 'None'",
+   "ok": true,
+   "evidence": "Dr. Bharat, your listing numbers flattened this week. There's no live offer on your listing right no"
+  },
+  {
+   "area": "derived-numbers",
+   "check": "180 delivery + 95 dine-in = 275 stated correctly",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "derived-numbers",
+   "check": "150 - 145 = 5 reviews away",
+   "ok": true,
+   "evidence": "Suresh, Mylari South Indian Cafe is 5 reviews away from 150 (145 today). Your thali is doing the tal"
+  },
+  {
+   "area": "consent",
+   "check": "blocked: no opt-in & reminder false",
+   "ok": true,
+   "evidence": "('vera', \"Dr. Meera, Priya's recall reminder is due, but I haven't sent it — customer has not opted \")"
+  },
+  {
+   "area": "consent",
+   "check": "tick never messages customer: no opt-in & reminder false",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "consent",
+   "check": "blocked: scope unrelated (marketing only) & reminder false",
+   "ok": true,
+   "evidence": "('vera', \"Dr. Meera, Priya's recall reminder is due, but I haven't sent it — consent scope ['promoti\")"
+  },
+  {
+   "area": "consent",
+   "check": "tick never messages customer: scope unrelated (marketing only) & reminder false",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "consent",
+   "check": "blocked: wrong merchant",
+   "ok": true,
+   "evidence": "('vera', \"Dr. Meera, Priya's recall reminder is due, but I haven't sent it — customer belongs to a d\")"
+  },
+  {
+   "area": "consent",
+   "check": "tick never messages customer: wrong merchant",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "consent",
+   "check": "blocked: no channel",
+   "ok": true,
+   "evidence": "('vera', \"Dr. Meera, Priya's recall reminder is due, but I haven't sent it — no reachable WhatsApp c\")"
+  },
+  {
+   "area": "consent",
+   "check": "tick never messages customer: no channel",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "consent",
+   "check": "blocked: phone missing",
+   "ok": true,
+   "evidence": "('vera', \"Dr. Meera, Priya's recall reminder is due, but I haven't sent it — no reachable WhatsApp c\")"
+  },
+  {
+   "area": "consent",
+   "check": "tick never messages customer: phone missing",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "consent",
+   "check": "winback blocked when consent is appointment-reminders only",
+   "ok": true,
+   "evidence": "Karthik, Rashmi's win-back message is due, but I haven't sent it — consent scope ['appointment_remin"
+  },
+  {
+   "area": "consent",
+   "check": "customer who replied STOP is not messaged again",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "suppression",
+   "check": "same trigger over 4 ticks sends once",
+   "ok": true,
+   "evidence": "[1, 0, 0, 0]"
+  },
+  {
+   "area": "suppression",
+   "check": "new trigger with new suppression key is not suppressed",
+   "ok": true,
+   "evidence": "1"
+  },
+  {
+   "area": "suppression",
+   "check": "different trigger id with already-used suppression key is suppressed",
+   "ok": true,
+   "evidence": "0"
+  },
+  {
+   "area": "suppression",
+   "check": "trigger v2 with same suppression key stays suppressed (dedup by key)",
+   "ok": true,
+   "evidence": "0"
+  },
+  {
+   "area": "suppression",
+   "check": "merchant send does not suppress same-merchant customer send",
+   "ok": true,
+   "evidence": "['vera', 'merchant_on_behalf']"
+  },
+  {
+   "area": "novelty",
+   "check": "filler replies never produce paraphrased repeats",
+   "ok": true,
+   "evidence": "3"
+  },
+  {
+   "area": "novelty",
+   "check": "filler replies eventually stop (<=4 sends)",
+   "ok": true,
+   "evidence": "3"
+  },
+  {
+   "area": "single-cta",
+   "check": "submission: one ask, and it is the last sentence",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "18 yes-variants -> execution with artifact, no re-qualifying",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "artifact-led message (draft inline): yes -> approval, no second draft",
+   "ok": true,
+   "evidence": "Approved — the review replies are queued. Nothing else needed from you on this o"
+  },
+  {
+   "area": "conversation",
+   "check": "negatives: hard stop / deferral / objection distinguished, no re-pitch",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "objections answered directly (no reset, no generic non-answer)",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "5 auto-reply forms: no sends, end within 2",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "near-identical auto-replies detected",
+   "ok": true,
+   "evidence": "['wait', 'end', 'end']"
+  },
+  {
+   "area": "conversation",
+   "check": "repeated templated greeting (no canned keywords) detected on repeat",
+   "ok": true,
+   "evidence": "['wait', 'end']"
+  },
+  {
+   "area": "conversation",
+   "check": "off-topic: honest scope limit, no invented capability",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "DISCOVER->EXECUTE: answer used, price detail folded, confirm closes",
+   "ok": true,
+   "evidence": "['Done — here\\'s the draft:\\n\\n\"Keratin at Studio11 Family Salon,', 'Done — here\\'s the draft:\\n\\n\"Keratin at Studio11 Family Salon,', 'Approved — the post is queued. Nothing else needed from you ']"
+  },
+  {
+   "area": "conversation",
+   "check": "merchant-supplied price is used in the post",
+   "ok": true,
+   "evidence": "Done — here's the draft:\n\n\"Keratin at Studio11 Family Salon, Kapra — Keratin @ ₹2,200. 'Priya is the best for balayage' "
+  },
+  {
+   "area": "conversation",
+   "check": "WAIT then merchant returns -> resumes with execution",
+   "ok": true,
+   "evidence": "[{'action': 'wait', 'wait_seconds': 86400, 'rationale': 'Merchant asked for time; backing off 1440 min without another nudge'}, \"Here's the summary:\\n\\nOffer: Dental Cleaning @ ₹299\\nShows on:\"]"
+  },
+  {
+   "area": "conversation",
+   "check": "language follows merchant per turn (Hinglish then English)",
+   "ok": true,
+   "evidence": "['Ye raha summary:\\n\\nOffer: Dental Cleaning @ ₹299\\nSh', 'Approved — the offer is queued. Nothing else neede']"
+  },
+  {
+   "area": "conversation",
+   "check": "customer yes with 2 slots asks which one (needed to book)",
+   "ok": true,
+   "evidence": "Badhiya! Kaunsa slot theek rahega — 1) Wed 5 Nov, 6pm ya 2) Thu 6 Nov, 5pm? Bas "
+  },
+  {
+   "area": "conversation",
+   "check": "customer picks slot by day name -> booked",
+   "ok": true,
+   "evidence": "Book ho gaya: Wed 5 Nov, 6pm, Dr. Meera's Dental Clinic par. Ek din pehle remind"
+  },
+  {
+   "area": "no-send",
+   "check": "unknown trigger id -> []",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "no-send",
+   "check": "trigger for unknown merchant -> []",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "no-send",
+   "check": "customer trigger before customer context -> [] (deferred)",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "no-send",
+   "check": "merchant who opted out -> []",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "no-send",
+   "check": "expired trigger with trusted clock -> not sent",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "no-send",
+   "check": "no-evidence unknown low-urgency trigger: send only if it has a grounded angle",
+   "ok": true,
+   "evidence": "[\"Paras, one thing on Paras Hair & Beauty's listing worth fixing this week. There'\"]"
+  },
+  {
+   "area": "no-send",
+   "check": "auto-replying number: urgency-5 compliance still allowed, others blocked",
+   "ok": true,
+   "evidence": "['trg_018_supply_atorvastatin_recall']"
+  },
+  {
+   "area": "security",
+   "check": "history/offer injection not followed",
+   "ok": true,
+   "evidence": "Suresh, Mylari South Indian Cafe is 5 reviews away from 150 (145 today). Your thali is doing the talking — 22 reviews praised it in the last 30 days.\n\nHere's a "
+  },
+  {
+   "area": "security",
+   "check": "reply injection: no prompt/env leak",
+   "ok": true,
+   "evidence": "Done — here's the draft:\n\n\"Thanks for coming to Mylari South Indian Cafe! If you enjoyed it, a quick"
+  },
+  {
+   "area": "security",
+   "check": "errors/metadata leak no stack traces, paths or keys",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "state",
+   "check": "no cross-merchant names or customers in sends",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "state",
+   "check": "interleaved conversations keep separate state",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "state",
+   "check": "300 concurrent context/tick/reply calls: no errors, newest version wins",
+   "ok": true,
+   "evidence": "([], 299, 299)"
+  },
+  {
+   "area": "state",
+   "check": "concurrent ticks sent the research trigger at most once",
+   "ok": true,
+   "evidence": "['research:dentists:2026-W17']"
+  },
+  {
+   "area": "dates",
+   "check": "festival event today: sane framing",
+   "ok": true,
+   "evidence": "Lakshmi, Ugadi is today. For you, Oct-Dec brings the primary wedding/festival season (bridal package bookings 4x baseline). Your Haircut @ ₹99 is the "
+  },
+  {
+   "area": "dates",
+   "check": "festival event tomorrow: sane framing",
+   "ok": true,
+   "evidence": "Lakshmi, Ugadi is tomorrow (Mon 27 Apr). For you, Oct-Dec brings the primary wedding/festival season (bridal package bookings 4x baseline). Your Hairc"
+  },
+  {
+   "area": "dates",
+   "check": "festival event yesterday: sane framing",
+   "ok": true,
+   "evidence": "Lakshmi, Ugadi has already gone by (25 Apr), so there's nothing to push for it now. Want me to note it for next year's plan instead?"
+  },
+  {
+   "area": "dates",
+   "check": "festival malformed date: sane framing",
+   "ok": true,
+   "evidence": "Lakshmi, Ugadi is coming up. For you, Oct-Dec brings the primary wedding/festival season (bridal package bookings 4x baseline). Your Haircut @ ₹99 is "
+  },
+  {
+   "area": "dates",
+   "check": "festival year boundary: sane framing",
+   "ok": true,
+   "evidence": "Lakshmi, New Year is on 1 Jan — 250 days out, so a New Year discount now would just be wasted margin. The window that's actually open now is the mini-"
+  },
+  {
+   "area": "wave2",
+   "check": "merchant asked for time -> no other proactive nudge inside the wait window",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "wave2",
+   "check": "after the wait window, proactive sends resume",
+   "ok": true,
+   "evidence": "1"
+  },
+  {
+   "area": "wave2",
+   "check": "no cross-category vocabulary leakage (100 triggers)",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "wave2",
+   "check": "research w/o item id: retrieves a cited digest item",
+   "ok": true,
+   "evidence": "Dr. Meera, the new JIDA Oct 2026 just landed — one result worth 2 minutes of your time. 3-month fluoride varnish recall outperforms 6-month "
+  },
+  {
+   "area": "wave2",
+   "check": "explicit top_item_id wins over unrelated items",
+   "ok": true,
+   "evidence": "Dr. Meera, the new JIDA Oct 2026 just landed — one result worth 2 minutes of your time. 3-month fluoride varnish recall "
+  },
+  {
+   "area": "wave2",
+   "check": "flat metrics + perf_dip: no invented % move",
+   "ok": true,
+   "evidence": "vikas, people who find sunrise medicos do tap through (ctr 4.1% vs 3.8% for similar pharmacies in metros), but views lag: 720 in 30 days vs "
+  },
+  {
+   "area": "wave2",
+   "check": "flat metrics + perf_spike: no invented % move",
+   "ok": true,
+   "evidence": "vikas, a quick look at what's working on sunrise medicos's listing. your listing converts well — ctr 4.1% vs 3.8% for similar pharmacies in "
+  },
+  {
+   "area": "wave2",
+   "check": "winback state=new: no shame/pressure words",
+   "ok": true,
+   "evidence": "Hi Rashmi, Karthik from PowerHouse Fitness, HSR Layout 💪 You trained with us for 5 months on weight "
+  },
+  {
+   "area": "wave2",
+   "check": "winback state=active: no shame/pressure words",
+   "ok": true,
+   "evidence": "Hi Rashmi, Karthik from PowerHouse Fitness, HSR Layout 💪 You trained with us for 5 months on weight "
+  },
+  {
+   "area": "wave2",
+   "check": "winback state=lapsed_soft: no shame/pressure words",
+   "ok": true,
+   "evidence": "Hi Rashmi, Karthik from PowerHouse Fitness, HSR Layout 💪 You trained with us for 5 months on weight "
+  },
+  {
+   "area": "wave2",
+   "check": "winback state=lapsed_hard: no shame/pressure words",
+   "ok": true,
+   "evidence": "Hi Rashmi, Karthik from PowerHouse Fitness, HSR Layout 💪 You trained with us for 5 months on weight "
+  },
+  {
+   "area": "wave2",
+   "check": "winback state=churned: no shame/pressure words",
+   "ok": true,
+   "evidence": "Hi Rashmi, Karthik from PowerHouse Fitness, HSR Layout 💪 You trained with us for 5 months on weight "
+  },
+  {
+   "area": "wave2",
+   "check": "hi-pref customer message keeps molecules, date, discount",
+   "ok": true,
+   "evidence": "Namaste — refill reminder: Sharma ji ki metformin, atorvastatin aur telmisartan 28 Apr tak khatam ho jayengi. Apollo Hea"
+  },
+  {
+   "area": "wave2",
+   "check": "customer English yes -> dispatch confirmation",
+   "ok": true,
+   "evidence": "Thank you — Apollo Health Plus Pharmacy will pack the same medicines and send them to the saved addr"
+  },
+  {
+   "area": "wave2",
+   "check": "rationales: concise, specific, numbers consistent with body",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "wave2",
+   "check": "first-touch sends carry template_name + newline-free params",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "wave2",
+   "check": "in-session reply is free-form (no template fields required)",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "wave2",
+   "check": "customer injection: no other-customer data",
+   "ok": true,
+   "evidence": "Thanks! We'll pass this on and get back to you shortly."
+  },
+  {
+   "area": "wave2",
+   "check": "merchant said 'already done' -> same-family low-urgency nudge suppressed",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "wave2",
+   "check": "renewal with subscription=expired: valid, no None",
+   "ok": true,
+   "evidence": "Dr. Bharat, your Pro plan lapsed 20 days ago. Before you decide, the honest picture: calls are down 50% this w"
+  },
+  {
+   "area": "wave2",
+   "check": "renewal with subscription=trial: valid, no None",
+   "ok": true,
+   "evidence": "Dr. Bharat, your Trial plan ends in 3 days. Before you decide, the honest picture: calls are down 50% this wee"
+  },
+  {
+   "area": "wave2",
+   "check": "renewal with subscription=missing: valid, no None",
+   "ok": true,
+   "evidence": "Dr. Bharat, your plan is up for renewal. Before you decide, the honest picture: calls are down 50% this week a"
+  },
+  {
+   "area": "performance",
+   "check": "all endpoints p99 < 1s (budget 15s simulator / 30s brief)",
+   "ok": true,
+   "evidence": "{'tick(100 triggers)': {'n': 60, 'min': 5.2, 'mean': 10.8, 'p50': 5.4, 'p95': 57.2, 'p99': 101.7, 'max': 94.6}, 'reply': {'n': 200, 'min': 1.3, 'mean': 1.5, 'p50': 1.4, 'p95': 2.1, 'p99': 2.2, 'max': 2.6}, 'context': {'n': 200, 'min': 0.7, 'mean': 0.7, 'p50': 0.7, 'p95': 0.8, 'p99': 0.8, 'max': 0.9}, 'healthz': {'n': 50, 'min': 0.8, 'mean': 0.8, 'p50': 0.8, 'p95': 0.9, 'p99': 1.0, 'max': 1.0}}"
+  },
+  {
+   "area": "performance",
+   "check": "worst single call < 2s",
+   "ok": true,
+   "evidence": "94.6"
+  },
+  {
+   "area": "performance",
+   "check": "10-way concurrent replies p95 < 1s",
+   "ok": true,
+   "evidence": "{'p50': 21.7, 'p95': 29.7, 'max': 32.6}"
+  }
+ ],
+ "performance": {
+  "tick(100 triggers)": {
+   "n": 60,
+   "min": 5.2,
+   "mean": 10.8,
+   "p50": 5.4,
+   "p95": 57.2,
+   "p99": 101.7,
+   "max": 94.6
+  },
+  "reply": {
+   "n": 200,
+   "min": 1.3,
+   "mean": 1.5,
+   "p50": 1.4,
+   "p95": 2.1,
+   "p99": 2.2,
+   "max": 2.6
+  },
+  "context": {
+   "n": 200,
+   "min": 0.7,
+   "mean": 0.7,
+   "p50": 0.7,
+   "p95": 0.8,
+   "p99": 0.8,
+   "max": 0.9
+  },
+  "healthz": {
+   "n": 50,
+   "min": 0.8,
+   "mean": 0.8,
+   "p50": 0.8,
+   "p95": 0.9,
+   "p99": 1.0,
+   "max": 1.0
+  }
+ }
+}

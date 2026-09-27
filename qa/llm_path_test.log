@@ -1,0 +1,41 @@
+LLM config: provider=gemini model=gemini-3.5-flash-lite enabled=True key=set
+
+  [trg_010_ipl_match_delhi] llm_used=True 2616ms
+  DETERMINISTIC: Suresh, DC vs MI is on tonight (7:30pm, Arun Jaitley Stadium) — but it's a Sunday game. Weekend IPL nights pull people home — Saturday games have cut restaurant
+  FINAL:         Suresh, DC vs MI is on tonight at 7:30pm at Arun Jaitley Stadium. Weekend IPL nights pull people home—Saturday games cut restaurant covers by 12% (magicpin, Apr
+
+  [trg_023_competitor_opened_dentist] llm_used=False 2199ms
+  DETERMINISTIC: Dr. Meera, a new clinic — Smile Studio — opened 1.3 km from you on 8 Apr, leading with Dental Cleaning @ ₹199. That's ₹100 under your Dental Cleaning @ ₹299. I 
+  FINAL:         Dr. Meera, a new clinic — Smile Studio — opened 1.3 km from you on 8 Apr, leading with Dental Cleaning @ ₹199. That's ₹100 under your Dental Cleaning @ ₹299. I 
+
+  [trg_003_recall_due_priya] llm_used=False 1805ms
+  DETERMINISTIC: Namaste Priya ji 🦷 — aapki 6-month cleaning ka time ho gaya hai (pichli 12 May ko hui thi). Dr. Meera's Dental Clinic, Lajpat Nagar mein do weekday shaam ke slo
+  FINAL:         Namaste Priya ji 🦷 — aapki 6-month cleaning ka time ho gaya hai (pichli 12 May ko hui thi). Dr. Meera's Dental Clinic, Lajpat Nagar mein do weekday shaam ke slo
+[PASS] A. live Gemini realization -> final output always valid (LLM text used only if it passed the validator)
+       1/3 LLM rewrites accepted, 2/3 fell back; latency ms [2616, 2199, 1805]
+[PASS] B. timeout -> deterministic fallback
+       3ms, fell back=True
+[PASS] C. malformed JSON -> deterministic fallback
+       3ms, fell back=True
+[PASS] D. empty output -> deterministic fallback
+       3ms, fell back=True
+[PASS] E. hallucinated number -> deterministic fallback
+       3ms, fell back=True
+[PASS] F. fake citation -> deterministic fallback
+       3ms, fell back=True
+[PASS] G. fake offer -> deterministic fallback
+       2ms, fell back=True
+[PASS] H. multiple CTAs -> deterministic fallback
+       2ms, fell back=True
+[PASS] I. wrong language -> deterministic fallback
+       2ms, fell back=True
+[PASS] J. overlong -> deterministic fallback
+       4ms, fell back=True
+[PASS] K. execution overclaim -> deterministic fallback
+       2ms, fell back=True
+[PASS] L. CTA intent changed -> deterministic fallback
+       2ms, fell back=True
+
+configured LLM timeout 8.0s (urllib timeout); engine tick polish budget REQUEST_BUDGET_S=9.0s
+
+LLM PATH: 12/12 pass

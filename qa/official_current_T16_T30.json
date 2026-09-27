@@ -1,0 +1,314 @@
+{
+ "summary": {
+  "scored": 15,
+  "fallbacks": 0,
+  "avg_total_real": 36.4,
+  "specificity": 5.87,
+  "category_fit": 7.93,
+  "merchant_fit": 6.07,
+  "decision_quality": 8.27,
+  "engagement_compulsion": 8.27
+ },
+ "rows": [
+  {
+   "test_id": "T16",
+   "kind": "dormant_with_vera",
+   "category": "salons",
+   "fallback": false,
+   "specificity": 5,
+   "category_fit": 8,
+   "merchant_fit": 5,
+   "decision_quality": 9,
+   "engagement_compulsion": 9,
+   "total": 36,
+   "hint": "Ground your performance comparisons and client counts only in the provided context metrics.",
+   "reasons": {
+    "specificity": "The message contains highly specific numbers, but it fabricates data not present in the context (30% drop, 28 benchmark, and 180 dormant clients), resulting in a strict penalty.",
+    "category_fit": "The tone is warm, helpful, and highly practical for a salon owner, avoiding all restricted promotional taboos.",
+    "merchant_fit": "It correctly uses the owner's name and salon name, but fails on fit by hallucinating false performance data about her specific business.",
+    "decision_quality": "Strong connection to the 38-day dormancy trigger and immediately acts on the winback eligibility signal.",
+    "engagement": "Highly compelling due to the peer comparison and an extremely low-friction, binary CTA where the merchant only has to approve a draft."
+   }
+  },
+  {
+   "test_id": "T17",
+   "kind": "dormant_with_vera",
+   "category": "restaurants",
+   "fallback": false,
+   "specificity": 8,
+   "category_fit": 8,
+   "merchant_fit": 4,
+   "decision_quality": 7,
+   "engagement_compulsion": 8,
+   "total": 35,
+   "hint": "Stick only to the ledger provided; ghost numbers will eventually haunt the relationship.",
+   "reasons": {
+    "specificity": "The message uses highly specific metrics including percentages, call counts, and a concrete offer structure ('Free Delivery > ₹500').",
+    "category_fit": "The tone is practical, direct, and operator-to-operator, which perfectly suits a busy restaurant owner like Anand.",
+    "merchant_fit": "While it correctly uses the owner's name and the actual call count of 26, it receives a -2 penalty for fabricating the 21% week-on-week drop and the competitor benchmark of 38 calls, which are not in the context.",
+    "decision_quality": "It successfully connects the 'dormant' trigger to the lack of active offers on the merchant's listing, proposing a logical next step.",
+    "engagement": "The binary yes/no CTA is extremely low friction, and the message leverages loss aversion (falling calls) and social proof to drive a response."
+   }
+  },
+  {
+   "test_id": "T18",
+   "kind": "festival_upcoming",
+   "category": "salons",
+   "fallback": false,
+   "specificity": 8,
+   "category_fit": 8,
+   "merchant_fit": 5,
+   "decision_quality": 9,
+   "engagement_compulsion": 8,
+   "total": 38,
+   "hint": "Even a brilliant strategic pivot loses its luster when the supporting market data is spun from thin air.",
+   "reasons": {
+    "specificity": "Includes precise dates, days remaining, and a specific price point, though it introduces an unverified statistical claim.",
+    "category_fit": "The tone is highly practical and business-savvy, perfectly matching the 'warm_practical' persona for a salon owner.",
+    "merchant_fit": "While it correctly addresses Lakshmi, it receives a -2 penalty for fabricating the 'mini-bridal window' and '15% volume' data which was not in the provided context.",
+    "decision_quality": "Excellent pivot away from an premature Diwali trigger (188 days out) to suggest a highly relevant, immediate seasonal alternative.",
+    "engagement": "The binary CTA is extremely low-friction and proposes a highly specific, ready-to-go action."
+   }
+  },
+  {
+   "test_id": "T19",
+   "kind": "festival_upcoming",
+   "category": "gyms",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 6,
+   "merchant_fit": 3,
+   "decision_quality": 8,
+   "engagement_compulsion": 7,
+   "total": 28,
+   "hint": "Trust is built on real numbers, not ghost clients from thin air.",
+   "reasons": {
+    "specificity": "While it mentions specific months, the claim of '387 customers' is entirely fabricated and not present in the merchant context.",
+    "category_fit": "The tone is appropriate for a gym and avoids all taboos, though it leans more towards marketing than energetic coaching.",
+    "merchant_fit": "Successfully addresses Pooja and Bend & Burn, but fails by fabricating customer metrics instead of using the provided views and calls data.",
+    "decision_quality": "Excellent alignment with the 'festival_upcoming' trigger, setting up a timely campaign window for August-October.",
+    "engagement": "The binary yes/no CTA is low-friction, and offering to draft the message immediately reduces the merchant's cognitive load."
+   }
+  },
+  {
+   "test_id": "T20",
+   "kind": "gbp_unverified",
+   "category": "pharmacies",
+   "fallback": false,
+   "specificity": 6,
+   "category_fit": 8,
+   "merchant_fit": 9,
+   "decision_quality": 9,
+   "engagement_compulsion": 8,
+   "total": 40,
+   "hint": "Do not conjure ghosts in the numbers to make the living look better.",
+   "reasons": {
+    "specificity": "The message correctly uses the 30% uplift and 4.1% CTR from the context, but it receives a penalty for fabricating the 3.8% metro benchmark which was not in the data.",
+    "category_fit": "The tone is precise, objective, and professional, which aligns well with the trustworthy and precise voice required for pharmacies.",
+    "merchant_fit": "Successfully addresses the owner Vikas and the business Sunrise Medicos, utilizing their actual CTR data and respecting the English language preference.",
+    "decision_quality": "Strong connection to the trigger; it directly addresses the unverified status and incorporates the specific verification paths and uplift percentage from the payload.",
+    "engagement": "The message creates a clear incentive (30% uplift) and ends with a very low-friction, binary yes/no question to guide the merchant."
+   }
+  },
+  {
+   "test_id": "T21",
+   "kind": "ipl_match_today",
+   "category": "restaurants",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 9,
+   "merchant_fit": 4,
+   "decision_quality": 9,
+   "engagement_compulsion": 8,
+   "total": 34,
+   "hint": "Do not paint history with invisible ink; stick only to the ledger you were given.",
+   "reasons": {
+    "specificity": "While the message contains highly specific numbers and dates, it fabricates order counts (180 of 275) and review data (4 late delivery reviews) not present in the context, triggering a penalty.",
+    "category_fit": "The voice is perfectly tailored to a busy restaurant operator—practical, realistic, and focused on operational efficiency and cover counts.",
+    "merchant_fit": "It correctly addresses Suresh and references the active BOGO offer, but heavily fabricates the merchant's order history and customer review pain points.",
+    "decision_quality": "Excellent connection to the IPL trigger, correctly identifying it as a Sunday match and strategically advising a shift from dine-in to delivery based on day-of-week dynamics.",
+    "engagement": "The binary CTA is low-friction, and the advice leverages loss aversion (avoiding bad reviews and low dine-in covers) to compel a response."
+   }
+  },
+  {
+   "test_id": "T22",
+   "kind": "milestone_reached",
+   "category": "restaurants",
+   "fallback": false,
+   "specificity": 6,
+   "category_fit": 9,
+   "merchant_fit": 7,
+   "decision_quality": 9,
+   "engagement_compulsion": 9,
+   "total": 40,
+   "hint": "A recipe is only as good as its real ingredients; do not spice the message with imaginary reviews.",
+   "reasons": {
+    "specificity": "Uses precise numbers from the trigger payload, but loses points for fabricating the statistic about 22 reviews praising the thali.",
+    "category_fit": "The tone is warm, practical, and highly respectful of a busy restaurant operator's time, offering an immediate solution.",
+    "merchant_fit": "Addresses the owner by name and references their active Thali offer, but suffers a 2-point penalty for fabricating the 30-day review data.",
+    "decision_quality": "Excellent connection to the milestone trigger, turning the imminent 150-review mark into an immediate, actionable opportunity.",
+    "engagement": "The friction is incredibly low with a pre-written draft and a simple binary 'YES' call to action."
+   }
+  },
+  {
+   "test_id": "T23",
+   "kind": "milestone_reached",
+   "category": "restaurants",
+   "fallback": false,
+   "specificity": 6,
+   "category_fit": 8,
+   "merchant_fit": 9,
+   "decision_quality": 8,
+   "engagement_compulsion": 8,
+   "total": 39,
+   "hint": "Avoid the alphabet soup of marketing metrics and stick strictly to the facts in your ledger.",
+   "reasons": {
+    "specificity": "While it uses the exact views and CTR from the context, it fabricates external benchmark data (2.5% average CTR and 4,800 peer views) not provided in the context.",
+    "category_fit": "The tone is highly practical, direct, and operator-to-operator, which fits a busy restaurant owner perfectly.",
+    "merchant_fit": "Excellent personalization, correctly addressing Mukesh of Pizza Spot and utilizing his actual performance metrics.",
+    "decision_quality": "Successfully connects the vague 'milestone_reached' trigger to the merchant's impressive 5.3% CTR metric.",
+    "engagement": "The contrast between current views and peer views creates strong FOMO, and the binary CTA to draft posts is very low friction."
+   }
+  },
+  {
+   "test_id": "T24",
+   "kind": "perf_dip",
+   "category": "dentists",
+   "fallback": false,
+   "specificity": 7,
+   "category_fit": 9,
+   "merchant_fit": 7,
+   "decision_quality": 9,
+   "engagement_compulsion": 9,
+   "total": 41,
+   "hint": "A clinical diagnosis must rely only on the patient's chart; do not invent the neighborhood average or the cost of the remedy.",
+   "reasons": {
+    "specificity": "Highly specific with exact metrics (50% drop, 6 vs 12 calls, 12 days to renew), but penalized 2 points for fabricating the 3% competitor CTR benchmark and the ₹299 price point.",
+    "category_fit": "Perfect clinical peer-to-peer tone. Correctly uses the 'Dr.' prefix with the owner's name and frames the solution as an 'entry offer' for patients.",
+    "merchant_fit": "Successfully personalizes to Dr. Bharat and Bharat Dental Care, but loses 2 points for fabricating external market benchmarks and specific pricing not provided in the context.",
+    "decision_quality": "Excellent connection to the trigger. It directly addresses the severe performance dip in calls and ties it to the urgent 12-day renewal window.",
+    "engagement": "Strong loss aversion (50% drop in calls) combined with an extremely low-friction, binary yes/no CTA to push a pre-drafted offer live immediately."
+   }
+  },
+  {
+   "test_id": "T25",
+   "kind": "perf_dip",
+   "category": "salons",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 8,
+   "merchant_fit": 3,
+   "decision_quality": 7,
+   "engagement_compulsion": 8,
+   "total": 30,
+   "hint": "Do not invent account history or benchmark metrics that are absent from the merchant profile.",
+   "reasons": {
+    "specificity": "While it correctly uses the 5.8% CTR and 22 calls from the context, it heavily fabricates external benchmarks and a 39-day lapsed Pro plan.",
+    "category_fit": "The tone is warm, helpful, and practical for a salon owner, and it successfully avoids all listed taboo phrases.",
+    "merchant_fit": "It correctly uses the owner's name and business name, but fails significantly by hallucinating false information about the merchant's subscription status.",
+    "decision_quality": "It addresses the performance dip trigger well by focusing on lagging calls, though it relies on fabricated benchmarks to make the point.",
+    "engagement": "The binary yes/no CTA is highly actionable and low-friction, offering a specific, realistic setup suggestion to drive immediate agreement."
+   }
+  },
+  {
+   "test_id": "T26",
+   "kind": "perf_spike",
+   "category": "gyms",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 7,
+   "merchant_fit": 8,
+   "decision_quality": 9,
+   "engagement_compulsion": 8,
+   "total": 36,
+   "hint": "Do not conjure program details out of thin air when the studio's actual active offers are already on the table.",
+   "reasons": {
+    "specificity": "While it correctly uses the 15% increase and baseline of 18, it fabricates specific program details (4-week, 3 classes/week, age 7-12, ₹2,499) not present in the context, incurring a -2 penalty.",
+    "category_fit": "The tone is energetic, disciplined, and highly proactive, which fits the gym/yoga category well and avoids all forbidden fast-result taboos.",
+    "merchant_fit": "It correctly addresses the owner Padma, respects the English language preference, and accurately references her studio's recent performance metrics.",
+    "decision_quality": "Excellent alignment with the performance spike trigger, directly connecting the 15% call volume increase to the kids' yoga post and offering a timely next step.",
+    "engagement": "The binary yes/no question creates an extremely low-friction reply path, combined with urgency ('while interest is warm') to drive immediate action."
+   }
+  },
+  {
+   "test_id": "T27",
+   "kind": "perf_spike",
+   "category": "pharmacies",
+   "fallback": false,
+   "specificity": 5,
+   "category_fit": 8,
+   "merchant_fit": 6,
+   "decision_quality": 7,
+   "engagement_compulsion": 9,
+   "total": 35,
+   "hint": "Ground your performance metrics strictly in the provided context instead of inventing benchmarks and growth rates.",
+   "reasons": {
+    "specificity": "While the message contains many precise-looking numbers, it fabricates the +5% WoW call growth, the 3.8% metro benchmark, and the 42% YoY search stat, violating the strict no-fabrication rule.",
+    "category_fit": "The tone is highly precise, objective, and professional, which perfectly aligns with the trustworthy voice required for pharmacies.",
+    "merchant_fit": "Correctly addresses the owner Vikas and uses his actual 4.1% CTR, but loses points for hallucinating other metrics specific to his business.",
+    "decision_quality": "Successfully connects the 'perf_spike' trigger to rising calls and addresses the 'delivery_not_set_up' signal, though the spike metric itself is fabricated.",
+    "engagement": "Highly compelling with a clear opportunity gap (delivery demand) and an extremely low-friction binary CTA to take action immediately."
+   }
+  },
+  {
+   "test_id": "T28",
+   "kind": "recall_due",
+   "category": "dentists",
+   "fallback": false,
+   "specificity": 9,
+   "category_fit": 8,
+   "merchant_fit": 9,
+   "decision_quality": 9,
+   "engagement_compulsion": 9,
+   "total": 44,
+   "hint": "A subtle injection of clinical necessity might make the urgency of the recall feel more absolute.",
+   "reasons": {
+    "specificity": "The message contains highly specific, verifiable facts including the exact last service date (12 May), the specific upcoming slot times, and the exact price of ₹299.",
+    "category_fit": "It fits the dental category well by referencing a clinical procedure (6-month cleaning) and using the 'Dr.' prefix in the clinic name, though the tone leans slightly more casual than peer-clinical.",
+    "merchant_fit": "Perfect alignment with the merchant's clinic name, locality (Lajpat Nagar), and flawlessly executes the customer's preferred 'hi-en mix' language.",
+    "decision_quality": "Strong connection to the 'recall_due' trigger, utilizing the exact last service date and the specific available slots provided in the payload.",
+    "engagement": "The '1 or 2' binary choice CTA dramatically reduces friction for a response, combined with an attractive price point of ₹299."
+   }
+  },
+  {
+   "test_id": "T29",
+   "kind": "recall_due",
+   "category": "gyms",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 6,
+   "merchant_fit": 5,
+   "decision_quality": 6,
+   "engagement_compulsion": 8,
+   "total": 29,
+   "hint": "A mirror should only reflect the truths already written in the scroll.",
+   "reasons": {
+    "specificity": "While the message includes specific dates and visit counts, these data points ('1 Apr', '9 visits') are completely fabricated and not present in the provided context, resulting in a heavy penalty.",
+    "category_fit": "The tone is welcoming and fits a boutique yoga studio well, though it leans more gentle than the requested 'energetic_disciplined' voice for the gym category.",
+    "merchant_fit": "Correctly identifies the owner Padma, the studio name, and the Mylapore locality, but fabricates the customer's specific interaction history.",
+    "decision_quality": "The recall angle is highly relevant to the 'recall_due' trigger, but the decision to invent a past visit date and count to justify the recall is a compliance failure.",
+    "engagement": "Excellent low-friction CTA ('Reply YES') combined with a genuine active offer (Free Body Composition Analysis) to incentivize a response."
+   }
+  },
+  {
+   "test_id": "T30",
+   "kind": "regulation_change",
+   "category": "dentists",
+   "fallback": false,
+   "specificity": 8,
+   "category_fit": 9,
+   "merchant_fit": 7,
+   "decision_quality": 9,
+   "engagement_compulsion": 8,
+   "total": 41,
+   "hint": "Look closely at her active clinic offers and performance signals to make this critical compliance check feel uniquely tailored to her practice's current health.",
+   "reasons": {
+    "specificity": "Includes highly specific technical details like dose limits (1.5 mSv to 1.0 mSv) and the exact deadline, though some regulatory details are external to the provided context.",
+    "category_fit": "Superb peer-to-peer clinical tone. Uses the 'Dr.' prefix correctly and speaks the technical language of a dentist (IOPA, RVG, DCI) naturally.",
+    "merchant_fit": "Addresses the merchant correctly by name, but completely ignores the rich performance data and signals (like her active ₹299 cleaning offer or low CTR) available in the context.",
+    "decision_quality": "Strongly aligned with the regulation_change trigger, translating a dry policy update into an immediate, actionable deadline for the merchant.",
+    "engagement": "Leverages audit anxiety effectively and offers a high-value, zero-friction compliance asset (SOP draft) with a simple yes/no CTA."
+   }
+  }
+ ]
+}

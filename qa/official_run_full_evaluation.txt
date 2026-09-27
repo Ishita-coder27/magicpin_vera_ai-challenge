@@ -1,0 +1,164 @@
+
+======================================================================
+                  magicpin AI Challenge — LLM Judge                   
+======================================================================
+
+[INFO] LLM Provider: Gemini (gemini-3.8-flash)
+[INFO] Testing LLM connection...
+[PASS] LLM connected successfully
+
+======================================================================
+                     LLM JUDGE — FULL_EVALUATION                      
+======================================================================
+
+[INFO] Bot: http://localhost:8081
+[INFO] LLM: Gemini (gemini-3.8-flash)
+[INFO] Loaded: 5 categories, 10 merchants, 25 triggers
+
+--- WARMUP ---
+
+[PASS] healthz (3ms)
+[PASS] metadata — Team: MagicAI, Model: none — deterministic planner + template realizer (no LLM configured)
+
+--- CONTEXT PUSH ---
+
+  [PASS] category/dentists
+  [PASS] category/gyms
+  [PASS] category/salons
+  [PASS] category/pharmacies
+  [PASS] category/restaurants
+  [PASS] merchant/001
+  [PASS] merchant/002
+  [PASS] merchant/003
+  [PASS] merchant/004
+  [PASS] merchant/005
+
+--- FULL EVALUATION ---
+
+[PASS] All contexts pushed
+
+--- SCORING COMPOSITIONS ---
+
+[INFO] Batch 1: 2 actions (5ms)
+[LLM] Analyzing message...
+[WARN] LLM error: HTTP Error 503: Service Unavailable
+
+Message: "Dr. Meera, a compliance date for your diary: 15 De..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[LLM] Analyzing message...
+
+Message: "Dr. Bharat, patient calls to Bharat Dental Care fe..."
+  Specificity            [██████████████░░░░░░]  7/10
+  Category Fit           [██████████████████░░]  9/10
+  Merchant Fit           [████████████████░░░░]  8/10
+  Decision Quality       [██████████████░░░░░░]  7/10
+  Engagement             [██████████████████░░]  9/10
+
+  TOTAL: 40/50
+[INFO] Batch 2: 3 actions (17ms)
+[LLM] Analyzing message...
+
+Message: "Suresh, DC vs MI is on tonight (7:30pm, Arun Jaitl..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[LLM] Analyzing message...
+
+Message: "Anjali, it's been 38 days since Glamour Lounge Spa..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[LLM] Analyzing message...
+
+Message: "Lakshmi, Diwali is on 31 Oct — 188 days out, so a ..."
+  Specificity            [████████████████░░░░]  8/10
+  Category Fit           [██████████████████░░]  9/10
+  Merchant Fit           [██████████████░░░░░░]  7/10
+  Decision Quality       [██████████████████░░]  9/10
+  Engagement             [████████████████░░░░]  8/10
+
+  TOTAL: 41/50
+[INFO] Batch 3: 2 actions (13ms)
+[LLM] Analyzing message...
+[WARN] LLM error: HTTP Error 503: Service Unavailable
+
+Message: "Suresh, you asked what the corporate bulk thali wo..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[LLM] Analyzing message...
+[WARN] LLM error: HTTP Error 503: Service Unavailable
+
+Message: "Karthik, views are down 30% this week — and that's..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[INFO] Batch 4: 2 actions (14ms)
+[LLM] Analyzing message...
+[WARN] LLM error: HTTP Error 503: Service Unavailable
+
+Message: "Ramesh, urgent: voluntary atorvastatin recall — ba..."
+  Specificity            [████████████████████] 10/10
+  Category Fit           [██████████░░░░░░░░░░]  5/10
+  Merchant Fit           [██████████░░░░░░░░░░]  5/10
+  Decision Quality       [██████████░░░░░░░░░░]  5/10
+  Engagement             [██████████░░░░░░░░░░]  5/10
+
+  TOTAL: 30/50
+[LLM] Analyzing message...
+
+Message: "Padma, picking up the kids yoga summer camp — here..."
+  Specificity            [██████████████░░░░░░]  7/10
+  Category Fit           [████████████████░░░░]  8/10
+  Merchant Fit           [██████████████░░░░░░]  7/10
+  Decision Quality       [██████████████████░░]  9/10
+  Engagement             [██████████████████░░]  9/10
+
+  TOTAL: 40/50
+[INFO] Batch 5: 1 actions (16ms)
+[LLM] Analyzing message...
+
+Message: "Vikas, Sunrise Medicos is still unverified on Goog..."
+  Specificity            [██████████████░░░░░░]  7/10
+  Category Fit           [████████████████░░░░]  8/10
+  Merchant Fit           [████████████████░░░░]  8/10
+  Decision Quality       [██████████████████░░]  9/10
+  Engagement             [████████████████░░░░]  8/10
+
+  TOTAL: 40/50
+
+--- FINAL SUMMARY ---
+
+[INFO] Messages scored: 10
+
+  Avg Specificity        [████████████████░░░░]  8/10
+  Avg Category Fit       [████████████░░░░░░░░]  6/10
+  Avg Merchant Fit       [████████████░░░░░░░░]  6/10
+  Avg Decision Quality   [████████████░░░░░░░░]  6/10
+  Avg Engagement         [████████████░░░░░░░░]  6/10
+
+  AVERAGE SCORE: 32/50 (64%)
+
+  GOOD

@@ -1,0 +1,63 @@
+
+======================================================================
+                  magicpin AI Challenge — LLM Judge                   
+======================================================================
+
+[INFO] LLM Provider: Gemini (gemini-3.8-flash)
+[INFO] Testing LLM connection...
+[PASS] LLM connected successfully
+
+======================================================================
+                           LLM JUDGE — ALL                            
+======================================================================
+
+[INFO] Bot: http://localhost:8081
+[INFO] LLM: Gemini (gemini-3.8-flash)
+[INFO] Loaded: 5 categories, 10 merchants, 25 triggers
+
+--- WARMUP ---
+
+[PASS] healthz (7ms)
+[PASS] metadata — Team: MagicAI, Model: none — deterministic planner + template realizer (no LLM configured)
+
+--- CONTEXT PUSH ---
+
+  [PASS] category/dentists
+  [PASS] category/gyms
+  [PASS] category/salons
+  [PASS] category/pharmacies
+  [PASS] category/restaurants
+  [PASS] merchant/001
+  [PASS] merchant/002
+  [PASS] merchant/003
+  [PASS] merchant/004
+  [PASS] merchant/005
+
+--- AUTO-REPLY DETECTION ---
+
+[INFO] Turn 1: Sending auto-reply...
+[PASS] Turn 1: Bot WAITING 14400s
+[INFO] Turn 2: Sending auto-reply...
+[PASS] Turn 2: Bot ENDED — detected auto-reply pattern!
+
+--- INTENT TRANSITION ---
+
+[INFO] Merchant: "Ok lets do it. Whats next?"
+[INFO] Bot action: send
+[INFO] Bot body: "Done — here's the draft:
+
+1) "Whitening season is here (Oct-Dec) — book early for the dates you want..."
+[PASS] Bot correctly switched to ACTION mode
+
+--- HOSTILE HANDLING ---
+
+[INFO] Merchant (hostile): "Stop messaging me. This is useless spam."
+[INFO] Bot action: end
+[PASS] Bot correctly ENDED on hostile message
+
+--- SCENARIO RESULTS ---
+
+[PASS] warmup
+[PASS] auto_reply
+[PASS] intent
+[PASS] hostile

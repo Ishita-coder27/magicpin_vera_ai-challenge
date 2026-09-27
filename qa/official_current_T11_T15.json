@@ -1,0 +1,114 @@
+{
+ "summary": {
+  "scored": 5,
+  "fallbacks": 0,
+  "avg_total_real": 33.6,
+  "specificity": 5.6,
+  "category_fit": 8.2,
+  "merchant_fit": 6.0,
+  "decision_quality": 6.0,
+  "engagement_compulsion": 7.8
+ },
+ "rows": [
+  {
+   "test_id": "T11",
+   "kind": "curious_ask_due",
+   "category": "salons",
+   "fallback": false,
+   "specificity": 6,
+   "category_fit": 8,
+   "merchant_fit": 3,
+   "decision_quality": 5,
+   "engagement_compulsion": 8,
+   "total": 30,
+   "hint": "Build your questions from the ground you are given rather than conjuring voices from thin air.",
+   "reasons": {
+    "specificity": "Contains concrete metrics like 12 reviews and 45% YoY search growth, but these figures are entirely ungrounded in the context.",
+    "category_fit": "Tone is warm, friendly, and practical, fitting a salon context naturally while discussing relevant services like balayage.",
+    "merchant_fit": "Addresses Lakshmi by name, but heavily fabricates non-existent data including stylist Priya, review quotes, and review counts (-2 penalty applied).",
+    "decision_quality": "Aligns with the 'what_service_in_demand_this_week' trigger, but makes an unfounded assumption rather than leveraging actual call/view metrics provided.",
+    "engagement": "Strong value proposition and low-friction CTA offering to craft a Google post directly in exchange for a short reply."
+   }
+  },
+  {
+   "test_id": "T12",
+   "kind": "curious_ask_due",
+   "category": "restaurants",
+   "fallback": false,
+   "specificity": 5,
+   "category_fit": 8,
+   "merchant_fit": 4,
+   "decision_quality": 5,
+   "engagement_compulsion": 8,
+   "total": 30,
+   "hint": "Build curiosity from the signals you actually hold rather than inventing praise from thin air.",
+   "reasons": {
+    "specificity": "Contains concrete figures like '22 reviews' and references to the thali, but the review count is entirely fabricated from unprovided data.",
+    "category_fit": "Uses a practical operator-to-operator tone focused on identifying a 'second hero dish' suited for a busy restaurant.",
+    "merchant_fit": "Correctly addresses Suresh and references the thali, but incurs a heavy penalty for inventing 22 monthly reviews not found in the context.",
+    "decision_quality": "Aligns with the curious_ask_due trigger by asking an operational question, but promises external platform actions (Google post) not grounded in trigger data.",
+    "engagement": "Low-friction prompt with a clear incentive (featuring the dish) that naturally invites a fast, one-word reply."
+   }
+  },
+  {
+   "test_id": "T13",
+   "kind": "customer_lapsed_hard",
+   "category": "gyms",
+   "fallback": false,
+   "specificity": 8,
+   "category_fit": 9,
+   "merchant_fit": 9,
+   "decision_quality": 8,
+   "engagement_compulsion": 9,
+   "total": 43,
+   "hint": "Ground visit timing in verified check-in data rather than assuming past routine.",
+   "reasons": {
+    "specificity": "Includes exact historical details (5 months, weight loss focus) and a concrete offer (3 free classes), though weekday evenings is assumed rather than factual data.",
+    "category_fit": "Tone strikes the energetic, disciplined gym coaching voice cleanly while strictly avoiding all transformation taboos.",
+    "merchant_fit": "Accurately identifies owner Karthik, gym name, HSR Layout locality, and the active 3 free classes promotion.",
+    "decision_quality": "Correctly addresses a lapsed member without sounding creepy about the exact 57-day counter, focusing instead on past momentum.",
+    "engagement": "Exceptional low-friction CTA with a simple binary reply and explicit friction removal ('nothing to sign')."
+   }
+  },
+  {
+   "test_id": "T14",
+   "kind": "customer_lapsed_soft",
+   "category": "dentists",
+   "fallback": false,
+   "specificity": 5,
+   "category_fit": 8,
+   "merchant_fit": 6,
+   "decision_quality": 5,
+   "engagement_compulsion": 7,
+   "total": 31,
+   "hint": "Anchor urgency to general checkup intervals rather than inventing visit dates from placeholder data.",
+   "reasons": {
+    "specificity": "Mentions specific timeframes like 1 Apr and Oct, but the exact last visit date is fabricated out of placeholder data.",
+    "category_fit": "Maintains a polite, clinical peer-to-patient tone fitting a dentist, citing standard 6-month recall rhythms.",
+    "merchant_fit": "Accurately references Dr. Asha, the clinic name, and Sector 17, but invents past customer visit records.",
+    "decision_quality": "Connects well to the customer lapse concept, but hallucinates specific timeline details not present in the trigger payload.",
+    "engagement": "Low friction binary 'Reply YES' CTA offers a simple next step for routine appointment scheduling."
+   }
+  },
+  {
+   "test_id": "T15",
+   "kind": "customer_lapsed_soft",
+   "category": "pharmacies",
+   "fallback": false,
+   "specificity": 4,
+   "category_fit": 8,
+   "merchant_fit": 8,
+   "decision_quality": 7,
+   "engagement_compulsion": 7,
+   "total": 34,
+   "hint": "Anchor the lapsed check-in to a concrete timeline or routine refill cadence to make the nudge undeniable.",
+   "reasons": {
+    "specificity": "Relies on vague phrasing like 'kaafi dino se' instead of concrete dates, last refill periods, or specific numbers.",
+    "category_fit": "Tone is courteous, caring, and trustworthy, fitting a neighborhood chemist asking after a customer's regular medicine needs.",
+    "merchant_fit": "Accurately integrates customer name, store name, locality, and perfectly matches the requested Hinglish language preference.",
+    "decision_quality": "Directly tackles the soft lapse trigger with a polite check-in, though lacks any mention of typical refill cycles to anchor the timing.",
+    "engagement": "The binary 'YES' CTA minimizes friction for recurring medication refills, though urgency and incentive remain relatively low."
+   }
+  }
+ ]
+}

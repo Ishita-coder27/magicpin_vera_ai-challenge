@@ -1,0 +1,33 @@
+{
+ "report": {
+  "policy": "B",
+  "scenarios": 240,
+  "messages_checked": 167,
+  "generic_message_rate": "0/167 (0.0%)",
+  "unsupported_claim_rate": "0/167 (0.0%)",
+  "semantic_repetition": "0 pairs in 20 sequences",
+  "cta_conflicts": "0/167 (0.0%)",
+  "category_mismatch": "0/167 (0.0%)",
+  "merchant_mismatch": "0/167 (0.0%)",
+  "execution_overclaims": 0,
+  "stale_context_failures": "0/20 (0.0%)",
+  "consent_failures": "0/30 (0.0%)",
+  "conversation_state_failures": 0,
+  "auto_reply_failures": "0/20 (0.0%)",
+  "obvious_action_taken": "0/20 (0.0%)",
+  "interruptions_of_live_thread": "0/20 (0.0%)",
+  "sparse_no_send": "0/30",
+  "priority_errors": 0,
+  "over_messaging": 0,
+  "extra_sends_policy_B": 29,
+  "deterministic": true,
+  "latency_ms": {
+   "p50": 1.4,
+   "p95": 2.7,
+   "p99": 3.7,
+   "max": 6.8
+  },
+  "runtime_s": 2.2
+ },
+ "failures": {}
+}

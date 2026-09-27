@@ -1,0 +1,316 @@
+{
+ "results": [
+  {
+   "area": "endpoints",
+   "check": "GET /v1/healthz 200 + schema",
+   "ok": true,
+   "evidence": "{'status': 'ok', 'uptime_seconds': 0, 'contexts_loaded': {'category': 0, 'merchant': 0, 'customer': 0, 'trigger': 0}}"
+  },
+  {
+   "area": "endpoints",
+   "check": "GET /v1/metadata 200 + all fields",
+   "ok": true,
+   "evidence": "['approach', 'contact_email', 'model', 'submitted_at', 'team_members', 'team_name', 'version']"
+  },
+  {
+   "area": "endpoints",
+   "check": "metadata has real team details (no placeholder)",
+   "ok": true,
+   "evidence": "{'team_name': 'MagicAI', 'team_members': ['ISHITA SINGH'], 'contact_email': 'singhish0304@gmail.com'}"
+  },
+  {
+   "area": "endpoints",
+   "check": "POST /v1/context 200 {accepted, ack_id, stored_at}",
+   "ok": true,
+   "evidence": "{'accepted': True, 'ack_id': 'ack_m_acc_ep_v1', 'stored_at': '2026-09-27T07:10:04.373Z'}"
+  },
+  {
+   "area": "endpoints",
+   "check": "POST /v1/tick empty -> 200 {actions: []}",
+   "ok": true,
+   "evidence": "{'actions': []}"
+  },
+  {
+   "area": "endpoints",
+   "check": "POST /v1/reply 200 valid action",
+   "ok": true,
+   "evidence": "{'action': 'send', 'body': \"Hi, Dr. Meera! Picking up where we left off — I can schedule the posts whenever you're ready. Say YES and it's done.\", 'cta': 'binary_yes_no', 'rationale': 'Greeting: resumed the open thread with one ask'}"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed context: not JSON: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"accepted\": false, \"reason\": \"invalid_payload\", \"details\": \"1 validation error for Contex')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed context: {}: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"accepted\": false, \"reason\": \"invalid_payload\", \"details\": \"4 validation errors for Conte')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed context: bad scope: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"accepted\": false, \"reason\": \"invalid_scope\", \"details\": \"scope must be one of [\\'category')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed context: version string: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(200, '{\"accepted\": true, \"ack_id\": \"ack_a_v3\", \"stored_at\": \"2026-09-27T07:10:04.382Z\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed tick: triggers not a list: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"actions\": [], \"error\": \"invalid_request\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed tick: not JSON: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"actions\": [], \"error\": \"invalid_request\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed reply: {}: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"action\": \"wait\", \"wait_seconds\": 1800, \"rationale\": \"malformed reply payload\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed reply: not JSON: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"action\": \"wait\", \"wait_seconds\": 1800, \"rationale\": \"malformed reply payload\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "malformed reply: message null: 4xx/200 JSON, no traceback",
+   "ok": true,
+   "evidence": "(400, '{\"action\": \"wait\", \"wait_seconds\": 1800, \"rationale\": \"malformed reply payload\"}')"
+  },
+  {
+   "area": "endpoints",
+   "check": "server alive after malformed barrage",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "endpoints",
+   "check": "POST /v1/teardown wipes state",
+   "ok": true,
+   "evidence": "{'category': 0, 'merchant': 0, 'customer': 0, 'trigger': 0}"
+  },
+  {
+   "area": "ingestion",
+   "check": "base dataset loads (observed counts)",
+   "ok": true,
+   "evidence": "{'category': 5, 'merchant': 50, 'customer': 200, 'trigger': 0}"
+  },
+  {
+   "area": "ingestion",
+   "check": "new customer + trigger arrive (counts 201 / 1)",
+   "ok": true,
+   "evidence": "{'category': 5, 'merchant': 50, 'customer': 201, 'trigger': 1}"
+  },
+  {
+   "area": "ingestion",
+   "check": "stale merchant v1 after v2 rejected 409",
+   "ok": true,
+   "evidence": "{'accepted': False, 'reason': 'stale_version', 'current_version': 2}"
+  },
+  {
+   "area": "ingestion",
+   "check": "same-version category re-push rejected 409",
+   "ok": true,
+   "evidence": "{'accepted': False, 'reason': 'stale_version', 'current_version': 2}"
+  },
+  {
+   "area": "versioning",
+   "check": "merchant v1 accepted, message reflects v1 (no offer)",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 50% week-on-week — about 6 vs a baseline of 12. There's n"
+  },
+  {
+   "area": "versioning",
+   "check": "merchant v2 replaces v1 (message changes)",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 50% week-on-week — about 6 vs a baseline of 12. Your Goog"
+  },
+  {
+   "area": "versioning",
+   "check": "replayed v1 rejected 409",
+   "ok": true,
+   "evidence": "{'accepted': False, 'reason': 'stale_version', 'current_version': 2}"
+  },
+  {
+   "area": "versioning",
+   "check": "final tick still uses v2",
+   "ok": true,
+   "evidence": "Dr. Bharat, patient calls to Bharat Dental Care fell 60% week-on-week — about 5 vs a baseline of 12. Your Goog"
+  },
+  {
+   "area": "versioning",
+   "check": "category: same/lower rejected, higher replaces",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "customer: same/lower rejected, higher replaces",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "versioning",
+   "check": "trigger: same/lower rejected, higher replaces",
+   "ok": true,
+   "evidence": "[200, 409, 409, 200, 409, 200, 409]"
+  },
+  {
+   "area": "adaptive",
+   "check": "A. new digest item used (81%, IJDR, 640)",
+   "ok": true,
+   "evidence": "Dr. Meera, the new IJDR Nov 2026 just landed — one result worth 2 minutes of your time. Silver diamine fluoride arrests "
+  },
+  {
+   "area": "adaptive",
+   "check": "B. customer added after trigger: deferred, then messaged",
+   "ok": true,
+   "evidence": "Namaste Meena ji 🦷 — aapki 6-month cleaning ka time ho gaya hai (pichli 2 Apr ko hui thi). Dr. Meera"
+  },
+  {
+   "area": "adaptive",
+   "check": "C. changed performance reflected (+5% -> +40%/+35%)",
+   "ok": true,
+   "evidence": "['Vikas, calls are ticking up — +5% week-on-week. And your lis', 'Vikas, views are up 40% week-on-week. And your listing converts well — CTR 4.1% ']"
+  },
+  {
+   "area": "adaptive",
+   "check": "D. brand-new trigger used (amlodipine, AM2026-0042)",
+   "ok": true,
+   "evidence": "Ramesh, urgent: voluntary amlodipine recall — batches AM2026-0042 (MfrQ). On the list you asked for: I'm filte"
+  },
+  {
+   "area": "adaptive",
+   "check": "E. offer expired -> no longer quoted as 'your' offer",
+   "ok": true,
+   "evidence": "['Dr. Meera, a new clinic — Smile Hub — opened 1 km from you, leading with Dental ', 'Dr. Meera, a new clinic — Smile Hub — opened 1 km from you, leading with Dental ']"
+  },
+  {
+   "area": "grounding",
+   "check": "no bait values (₹199 / 250 searches / 3.1% / expired-as-active) in 6 scenarios + replies",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "grounding",
+   "check": "batch codes / version labels with digits pass grounding and appear intact",
+   "ok": true,
+   "evidence": "Ramesh, urgent: voluntary atorvastatin recall — batches AT2025-0001 and BX-2026-17 (MfrV2). CDSCO alert Apr 2026 flags t"
+  },
+  {
+   "area": "offers",
+   "check": "offer lifecycle: paused only",
+   "ok": true,
+   "evidence": "([], 'is paused', \"Lakshmi, calls to Studio11 Family Salon fell 25% week-on-week. There's no live offer on your listing right now. Your Hair Spa @ ₹499 is paus\")"
+  },
+  {
+   "area": "offers",
+   "check": "offer lifecycle: expired only",
+   "ok": true,
+   "evidence": "([], '', \"Lakshmi, calls to Studio11 Family Salon fell 25% week-on-week. There's no live offer on your listing right now. Your Hair Spa @ ₹499 has exp\")"
+  },
+  {
+   "area": "offers",
+   "check": "offer lifecycle: removed (no offers)",
+   "ok": true,
+   "evidence": "([], '', \"Lakshmi, calls to Studio11 Family Salon fell 25% week-on-week. There's no live offer on your listing right now. Give people who find you a r\")"
+  },
+  {
+   "area": "offers",
+   "check": "offer lifecycle: multiple, one relevant active",
+   "ok": true,
+   "evidence": "([], '', \"Lakshmi, calls to Studio11 Family Salon fell 25% week-on-week. 'saturday wait' has come up in 2 reviews in 30 days — that's what searchers r\")"
+  },
+  {
+   "area": "injection",
+   "check": "injected instructions treated as data; no prompt/key/env/path leak, no ₹1 claim",
+   "ok": true,
+   "evidence": "Lakshmi, a demand shift worth acting on: 'Walk-in available' tag on GBP boosting calls 23% in metros (magicpin internal, Apr 2026). Salons that explicitly add '"
+  },
+  {
+   "area": "conversation",
+   "check": "8 yes-variants over HTTP -> direct execution",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "execution-truth: no claim of sent/published/payment/email across 6 yes->confirm flows",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "conversation",
+   "check": "WAIT: 'talk tomorrow' -> wait, and no unrelated nudge inside the window",
+   "ok": true,
+   "evidence": "({'action': 'wait', 'wait_seconds': 86400, 'rationale': 'Merchant asked for time; backing off 1440 min without another nudge'}, [])"
+  },
+  {
+   "area": "state",
+   "check": "400 concurrent mixed calls (20 workers): no errors",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "state",
+   "check": "no cross-merchant contamination under concurrency",
+   "ok": true,
+   "evidence": "[]"
+  },
+  {
+   "area": "state",
+   "check": "healthy after concurrency burst",
+   "ok": true,
+   "evidence": ""
+  },
+  {
+   "area": "performance",
+   "check": "HTTP latency p99 < 1000 ms on every endpoint (limits: 15 s simulator / 30 s brief)",
+   "ok": true,
+   "evidence": "{'context': {'n': 6160, 'p50': 0.4, 'p95': 0.5, 'p99': 7.3, 'max': 13.2}, 'tick': {'n': 200, 'p50': 11.2, 'p95': 17.8, 'p99': 75.5, 'max': 97.0}, 'reply': {'n': 378, 'p50': 10.8, 'p95': 15.5, 'p99': 19.3, 'max': 19.6}, 'healthz': {'n': 50, 'p50': 0.5, 'p95': 0.5, 'p99': 0.5, 'max': 0.5}}"
+  }
+ ],
+ "latency": {
+  "context": {
+   "n": 6160,
+   "p50": 0.4,
+   "p95": 0.5,
+   "p99": 7.3,
+   "max": 13.2
+  },
+  "tick": {
+   "n": 200,
+   "p50": 11.2,
+   "p95": 17.8,
+   "p99": 75.5,
+   "max": 97.0
+  },
+  "reply": {
+   "n": 378,
+   "p50": 10.8,
+   "p95": 15.5,
+   "p99": 19.3,
+   "max": 19.6
+  },
+  "healthz": {
+   "n": 50,
+   "p50": 0.5,
+   "p95": 0.5,
+   "p99": 0.5,
+   "max": 0.5
+  }
+ }
+}

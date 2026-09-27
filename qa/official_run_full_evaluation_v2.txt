@@ -1,0 +1,138 @@
+
+[95m[1m======================================================================[0m
+[95m[1m                  magicpin AI Challenge — LLM Judge                   [0m
+[95m[1m======================================================================[0m
+
+[94m[INFO][0m LLM Provider: Gemini (gemini-3.8-flash)
+[94m[INFO][0m Testing LLM connection...
+[92m[PASS][0m LLM connected successfully
+
+[95m[1m======================================================================[0m
+[95m[1m                     LLM JUDGE — FULL_EVALUATION                      [0m
+[95m[1m======================================================================[0m
+
+[94m[INFO][0m Bot: http://localhost:8081
+[94m[INFO][0m LLM: Gemini (gemini-3.8-flash)
+[94m[INFO][0m Loaded: 5 categories, 10 merchants, 25 triggers
+
+[96m[1m--- WARMUP ---[0m
+
+[92m[PASS][0m healthz (5ms)
+[92m[PASS][0m metadata — Team: MagicAI, Model: none — deterministic planner + template realizer (no LLM configured)
+
+[96m[1m--- CONTEXT PUSH ---[0m
+
+  [PASS] category/dentists
+  [PASS] category/gyms
+  [PASS] category/salons
+  [PASS] category/pharmacies
+  [PASS] category/restaurants
+  [PASS] merchant/001
+  [PASS] merchant/002
+  [PASS] merchant/003
+  [PASS] merchant/004
+  [PASS] merchant/005
+
+[96m[1m--- FULL EVALUATION ---[0m
+
+[92m[PASS][0m All contexts pushed
+
+[96m[1m--- SCORING COMPOSITIONS ---[0m
+
+[94m[INFO][0m Batch 1: 2 actions (9ms)
+[35m[LLM][0m Analyzing message...
+
+[96mMessage:[0m "Dr. Meera, a compliance date for your diary: 15 De..."
+  Specificity            [[92m██████████████[2m░░░░░░[0m] [92m 7/10[0m
+  Category Fit           [[92m██████████████████[2m░░[0m] [92m 9/10[0m
+  Merchant Fit           [[93m████████████[2m░░░░░░░░[0m] [93m 6/10[0m
+  Decision Quality       [[92m████████████████[2m░░░░[0m] [92m 8/10[0m
+  Engagement             [[92m████████████████[2m░░░░[0m] [92m 8/10[0m
+
+  [1mTOTAL: 38/50[0m
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Dr. Bharat, patient calls to Bharat Dental Care fe..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[94m[INFO][0m Batch 2: 3 actions (20ms)
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Suresh, DC vs MI is on tonight (7:30pm, Arun Jaitl..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Anjali, it's been 38 days since Glamour Lounge Spa..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Lakshmi, Diwali is on 31 Oct — 188 days out, so a ..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[94m[INFO][0m Batch 3: 2 actions (22ms)
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Suresh, you asked what the corporate bulk thali wo..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Karthik, views are down 30% this week — and that's..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[94m[INFO][0m Batch 4: 2 actions (21ms)
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Ramesh, urgent: voluntary atorvastatin recall — ba..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Merchant Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Decision Quality       [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+  Engagement             [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
+
+  [1mTOTAL: 30/50[0m
+[35m[LLM][0m Analyzing message...
+[93m[WARN][0m LLM error: HTTP Error 429: Too Many Requests
+
+[96mMessage:[0m "Padma, picking up the kids yoga summer camp — here..."
+  Specificity            [[92m████████████████████[2m[0m] [92m10/10[0m
+  Category Fit           [[93m██████████[2m░░░░░░░░░░[0m] [93m 5/10[0m
