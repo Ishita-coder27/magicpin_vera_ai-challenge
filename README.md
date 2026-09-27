@@ -1,0 +1,1 @@
+# magicpin_vera_ai-challenge
